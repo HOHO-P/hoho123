@@ -9,6 +9,7 @@ function setup() {
   dropdown.option("來了");
   dropdown.option("淡江大學");
   dropdown.option("教育科技");
+  dropdown.option("英文實習測驗");
   dropdown.position((width - dropdown.width) / 2, 10); // 將下拉式選單移到上方中間
   dropdown.changed(handleDropdownChange); // 設定選項改變時的處理函數
   
@@ -75,6 +76,10 @@ function goCrazy() {
 function handleDropdownChange() {
   if (dropdown.value() === "教育科技") {
     iframe.attribute('src', 'https://www.et.tku.edu.tw/'); // 使用 iframe 嵌入網頁
+  } else {
+    iframe.attribute('src', ''); // 清空 iframe
+      if (dropdown.value() === "英文實習測驗") {
+    iframe.attribute('src', 'https://hoho-p.github.io/0310/'); // 使用 iframe 嵌入網頁
   } else {
     iframe.attribute('src', ''); // 清空 iframe
   }
